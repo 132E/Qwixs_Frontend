@@ -1,13 +1,17 @@
-import {NavLink} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 
 const Nav = () => {
     return(
         <nav>
-            <h1>Qwixs</h1>
+            <div id='logo'>
+                <Link to='/'>Qwixs</Link>
+            </div>
             <div>
             <NavLink to='/'>Home</NavLink>
             <NavLink to='/business'>Business</NavLink>
+            <NavLink to='/services'>Services</NavLink>
             <NavLink to='/about'>About</NavLink>
+            
             </div>
         </nav>
     )
