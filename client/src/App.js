@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { BASE_URL } from "./globals";
 
 import Home from "./pages/Home";
 import Login from "./components/Login";
@@ -15,9 +16,19 @@ import AddServices from "./components/AddServices";
 import SignUp from "./components/SingUp";
 import About from "./pages/About";
 
-function App() {
+const App = () => {
   const [owners, setOwners] = useState();
   const [businesses, setBusinesses] = useState();
+
+  const getAllBusinesses = async () => {
+    let res = await axios.get(`${BASE_URL}/business`);
+    // console.log(res);
+    setBusinesses(res.data);
+  };
+
+  useEffect(() => {
+    getAllBusinesses();
+  }, []);
 
   const getAllOwners = async () => {
     let res = await axios.get("http://localhost:8000/owner");
@@ -26,15 +37,6 @@ function App() {
 
   useEffect(() => {
     getAllOwners();
-  }, []);
-
-  const getAllBusinesses = async () => {
-    let res = await axios.get("http://localhost:8000/business");
-    setBusinesses(res.data);
-  };
-
-  useEffect(() => {
-    getAllBusinesses();
   }, []);
 
   return (
@@ -65,6 +67,6 @@ function App() {
       </main>
     </div>
   );
-}
+};
 
 export default App;
