@@ -5,5 +5,4 @@ const Owner = () => {
         </div>
     )
 };
-
 export default Owner;

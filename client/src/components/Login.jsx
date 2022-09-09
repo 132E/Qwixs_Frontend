@@ -1,8 +1,55 @@
-const Login = () => {
-    return (
-        <div>
-            <h1>Login</h1>
-        </div>
-    );
-};
-export default Login;
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+const Login = ({ owners }) => {
+  let navigate = useNavigate()
+  const initialState = {
+    userName: '',
+    passwordDigest: ''
+  }
+  const [formState, setFormState] = useState(initialState)
+
+  const handleChange = (event) => {
+    setFormState({ ...formState, [event.target.id]: event.target.value })
+  }
+
+  const handleSubmit = () => {
+    const userData = owners.find(
+      (owner) => owner.userName === formState.userName
+    )
+
+    if (userData) {
+      navigate(`/owners/${userData.id}`, { state: { owner: userData } })
+    } else {
+      alert('try again')
+    }
+  }
+
+  return (
+    <div className="main-container">
+      {/* <img src={CIcon} alt="c-logo-icon" className="c-icon" /> */}
+      <h1>Login</h1>
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
+          <input
+            id="userName"
+            type="text"
+            onChange={handleChange}
+            value={formState.userName}
+            placeholder="Username"
+          />
+          <input
+            id="passwordDigest"
+            type="text"
+            onChange={handleChange}
+            value={formState.passwordDigest}
+            placeholder="Password"
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  )
+}
+
+export default Login

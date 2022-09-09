@@ -2,18 +2,22 @@ import {NavLink, Link} from 'react-router-dom';
 
 const Nav = () => {
     return(
-        <nav>
-            <div id='logo'>
-                <Link to='/'>Qwixs</Link>
+        <div className="NavBar">
+            <div id="NavLogo">
+                <div id="logo">
+                    <Link  className="nav-logo" to='/'><h3>Qwixs</h3></Link>
+                </div>
             </div>
-            <div>
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='/business'>Business</NavLink>
-            <NavLink to='/services'>Services</NavLink>
-            <NavLink to='/about'>About</NavLink>
-            
+            <div className="NavLinks">
+                <div className="links">
+                    <NavLink id='links' to='/'>Home</NavLink>
+                    <NavLink id='links' to='/owner'>Owner</NavLink>
+                    <NavLink id='links' to='/business'>Business</NavLink>
+                    <NavLink id='links' to='/services'>Services</NavLink>
+                    <NavLink id='links' to='/about'>About</NavLink>
+                </div>
             </div>
-        </nav>
+        </div>
     )
 };
 export default Nav;
