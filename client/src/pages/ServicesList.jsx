@@ -1,8 +1,19 @@
-const ServicesList = () => {
+const ServicesList = ({services}) => {
     return (
-        <div>
-            <h1>Services List</h1>
-        </div>
+        <section className="page" id="services-list">
+            <div className="flex">   
+                <h1>Service List</h1>
+                <div className="business-card">
+                    {services?.map((service) => (
+                        <div key={service._id}>
+                                <h3>{service.name}</h3>
+                                <p>{service.discription}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+        </section>
     );
 };
 export default ServicesList;

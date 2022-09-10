@@ -3,7 +3,7 @@ const BusinessList = ({ businesses, chooseBusiness }) => {
         <section className="page" id="business-list">
             <div className="flex">   
                 <h1>Business List</h1>
-                <div>
+                <div className="business-card">
                     {businesses?.map((business) => (
                         <div 
                             onClick={() => chooseBusiness(business)}

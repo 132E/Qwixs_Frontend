@@ -19,6 +19,7 @@ import About from "./pages/About";
 const App = () => {
   const [owners, setOwners] = useState();
   const [businesses, setBusinesses] = useState();
+  const [services, setServices] = useState();
 
   const getAllBusinesses = async () => {
     let res = await axios.get(`${BASE_URL}/business`);
@@ -31,12 +32,23 @@ const App = () => {
   }, []);
 
   const getAllOwners = async () => {
-    let res = await axios.get("http://localhost:8000/owner");
+    let res = await axios.get(`${BASE_URL}/owner`);
+    // console.log(res);
     setOwners(res.data);
   };
 
   useEffect(() => {
     getAllOwners();
+  }, []);
+
+  const getAllServices = async () => {
+    let res = await axios.get(`${BASE_URL}/services`);
+    // console.log(res);
+    setServices(res.data);
+  };
+
+  useEffect(() => {
+    getAllServices();
   }, []);
 
   return (
@@ -57,7 +69,10 @@ const App = () => {
             element={<Owner businesses={businesses} />}
           />
           <Route path="/business/:businessId" element={<BusinessDetails />} />
-          <Route path="/services" element={<ServicesList />} />
+          <Route
+            path="/services"
+            element={<ServicesList services={services} />}
+          />
           <Route path="/owners/ownerId/addbusiness" element={<AddBusiness />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login owners={owners} />} />
