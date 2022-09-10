@@ -65,12 +65,12 @@ body{
 
  /* home page style */
  .page-home{
-  /* background-image: url(./assets/HomeBg.png); */
+  background-image: url(./assets/qwixs-home-hero.jpg);
   background-color: #F3F6FA;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 750px;
   width: 100%;
  
   display: flex;

@@ -1,7 +1,42 @@
-const Owner = () => {
+import {useLocation, useNavigate} from "react-router-dom";
+import axios from "axios";
+import {BASE_URL} from "../globals";
+
+const Owner = ({businesses}) => {
+    
+    let location = useLocation();
+    let navigate = useNavigate();
+
+    let owner = location.state.owner
+    let ownerBusinesses = businesses?.filter((business) => business.owner === owner.id)
+
+    const addBusiness = () => {
+        navigate(`/owner/${owner.id}/addbusiness`, {state: {owner: owner}});
+    }
+
+    const edditBusiness = (business) => {
+        navigate(`/owner/${owner.id}/editbusiness`, {state: {business: business}});
+    }
+
+    const deleteBusiness = async (business) => {
+        await axios.delete(`${BASE_URL}/businesses/${business.id}`);
+        navigate(`/owner/${owner.id}`, {state: {owner: owner}});
+        window.location.reload(false);
+    }
+
+
+
     return(
         <div>
-            <h1>Owner</h1>
+            <section className="hero-section">
+                <h1>Hello</h1>
+                <h2>{owner.name}</h2>
+                <button onClick={addBusiness}>Add Business</button>
+            </section>
+        <div className="page-title">
+            <h1>Your Business Dashboard</h1>
+        </div>
+
         </div>
     )
 };

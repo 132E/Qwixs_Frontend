@@ -10,7 +10,10 @@ const BusinessList = ({ businesses, chooseBusiness }) => {
                             key={business._id}>
                                 <h3>{business.name}</h3>
                                 <p>{business.about}</p>
-                                <p>{business.services}</p>
+                                <p>{business.phone}</p>
+                                <p>{business.address}</p>
+                                <p>{business.city}</p>
+                                <p>{business.state}</p>
                         </div>
                     ))}
                 </div>

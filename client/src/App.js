@@ -11,6 +11,7 @@ import Owner from "./components/Owner";
 import BusinessList from "./pages/BusinessList";
 import BusinessDetails from "./pages/BusinessDetails";
 import AddBusiness from "./components/AddBusiness";
+import EditBusiness from "./components/EditBusiness";
 import ServicesList from "./pages/ServicesList";
 import AddServices from "./components/AddServices";
 import SignUp from "./components/SingUp";
@@ -61,22 +62,26 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
-            path="/business"
-            element={<BusinessList businesses={businesses} />}
-          />
-          <Route
             path="/owner/:ownerId"
             element={<Owner businesses={businesses} />}
+          />
+          <Route path="/about" element={<About />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login owners={owners} />} />
+          <Route path="/owner/:ownerId/addbusiness" element={<AddBusiness />} />
+          <Route
+            path="/owner/:ownerId/editbusiness"
+            element={<EditBusiness />}
+          />
+          <Route
+            path="/business"
+            element={<BusinessList businesses={businesses} />}
           />
           <Route path="/business/:businessId" element={<BusinessDetails />} />
           <Route
             path="/services"
             element={<ServicesList services={services} />}
           />
-          <Route path="/owners/ownerId/addbusiness" element={<AddBusiness />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login owners={owners} />} />
-          <Route path="/signup" element={<SignUp />} />
           <Route
             path="/business/:businessId/services"
             element={<AddServices />}

@@ -7,7 +7,7 @@ const ServicesList = ({services}) => {
                     {services?.map((service) => (
                         <div key={service._id}>
                                 <h3>{service.name}</h3>
-                                <p>{service.discription}</p>
+                                <p>{service.description}</p>
                         </div>
                     ))}
                 </div>
