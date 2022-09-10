@@ -48,7 +48,10 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/business" element={<BusinessList />} />
+          <Route
+            path="/business"
+            element={<BusinessList businesses={businesses} />}
+          />
           <Route
             path="/owner/:ownerId"
             element={<Owner businesses={businesses} />}
