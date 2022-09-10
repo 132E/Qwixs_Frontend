@@ -103,13 +103,19 @@ width: 150px;
 
 .cta-links{
 
-  color: #3C64B1;
+  color: #ffffff;
   text-decoration: none;
+  background-color: #162e59;
+  padding : 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
 
 }
 
+
+
 .cta-links:hover{
-  color: #CB1E11;
+  color: #7daaff;
 }
 
  /* LOGIN ? SINGIN */
