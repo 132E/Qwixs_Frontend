@@ -66,13 +66,6 @@ const SignUp = () => {
             value={formState.passwordDigest}
             placeholder="Password"
           />
-          <input
-            id="riderImage"
-            type="text"
-            onChange={handleChange}
-            value={formState.riderImage}
-            placeholder="Profile Picture"
-          />
           <button type="submit">Submit</button>
         </form>
       </div>
