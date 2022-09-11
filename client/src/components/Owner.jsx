@@ -14,7 +14,7 @@ const Owner = ({businesses}) => {
         navigate(`/owner/${owner.id}/addbusiness`, {state: {owner: owner}});
     }
 
-    const edditBusiness = (business) => {
+    const editBusiness = (business) => {
         navigate(`/owner/${owner.id}/editbusiness`, {state: {business: business}});
     }
 
@@ -34,7 +34,7 @@ const Owner = ({businesses}) => {
                 <button onClick={addBusiness}>Add Business</button>
             </section>
         <div className="page-title">
-            <h1>Your Business Dashboard</h1>
+            <h2>Your Business Dashboard</h2>
         </div>
 
         </div>
