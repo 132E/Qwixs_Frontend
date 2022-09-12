@@ -1,8 +1,8 @@
 const ServicesList = ({services}) => {
     return (
         <section className="page" id="services-list">
-            <div className="flex">   
                 <h1>Service List</h1>
+            <div className="flex">   
                 <div className="business-card">
                     {services?.map((service) => (
                         <div key={service._id}>

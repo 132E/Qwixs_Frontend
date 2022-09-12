@@ -1,15 +1,19 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { BASE_URL } from '../globals'
+
+
 
 const SignUp = () => {
+  
   let navigate = useNavigate()
   const initialState = {
     firstName: '',
     lastName: '',
     email: '',
     userName: '',
-    passwordDigest: '',
+    password: '',
   }
 
   const [formState, setFormState] = useState(initialState)
@@ -20,10 +24,11 @@ const SignUp = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let res = await axios.post(`http://localhost:8000/owner`, formState)
+    let res = await axios.post(`${BASE_URL}/owner/`, formState)
     setFormState(initialState)
-    navigate(`/riders/${res.data.id}`, { state: { rider: res.data } })
+    navigate(`owner/${res.data.id}`, { state: { owner: res.data } })
   }
+  
 
   return (
     <div className="main-container">
@@ -63,7 +68,7 @@ const SignUp = () => {
             id="passwordDigest"
             type="text"
             onChange={handleChange}
-            value={formState.passwordDigest}
+            value={formState.password}
             placeholder="Password"
           />
           <button type="submit">Submit</button>

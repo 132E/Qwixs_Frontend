@@ -19,11 +19,11 @@ const Login = ({ owners }) => {
     )
 
     if (userData) {
-      navigate(`/owners/${userData.id}`, { state: { owner: userData } })
+      navigate(`/owner/${userData.id}`, { state: { owner: userData } })
     } else {
-      alert('try again')
+      alert('ah... nope try again')
     }
-  }
+  } 
 
   return (
     <div className="main-container">

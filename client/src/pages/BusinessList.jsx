@@ -1,8 +1,8 @@
 const BusinessList = ({ businesses, chooseBusiness }) => {
     return (
         <section className="page" id="business-list">
-            <div className="flex">   
                 <h1>Business List</h1>
+            <div className="flex">   
                 <div className="business-card">
                     {businesses?.map((business) => (
                         <div 
