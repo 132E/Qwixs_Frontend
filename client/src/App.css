@@ -236,3 +236,10 @@ width: 150px;
   width: 350px;
   
 }
+
+.page-title{
+  width: 50%;
+  margin: 50px auto;
+  text-align: center;
+  border-bottom: #162e59 2px solid;
+}

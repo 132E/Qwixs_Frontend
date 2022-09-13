@@ -58,14 +58,14 @@ const SignUp = () => {
             placeholder="Email"
           />
           <input
-            id="userName"
+            id="username"
             type="text"
             onChange={handleChange}
             value={formState.username}
             placeholder="Username"
           />
           <input
-            id="passwordDigest"
+            id="password"
             type="text"
             onChange={handleChange}
             value={formState.password}

@@ -37,7 +37,7 @@ const Owner = ({businesses}) => {
                 <button onClick={addBusiness}>Add Business</button>
             </section>
             <div className="page-title">
-                <h2>Your Business Dashboard</h2>
+                <h2>Welcome to your Dashboard</h2>
             </div>
             <div className="businesses-container">
                 {ownerBusinesses?.map((business) =>(

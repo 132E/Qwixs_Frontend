@@ -83,7 +83,7 @@ const App = () => {
             element={<ServicesList services={services} />}
           />
           <Route
-            path="/business/:businessId/services"
+            path="/businesses/:businessId/addservice"
             element={<AddServices />}
           />
         </Routes>

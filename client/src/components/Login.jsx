@@ -14,7 +14,7 @@ const Login = ({ owners }) => {
   }
 
   const handleSubmit = () => {
-    const userData = owners.find(
+    const userData = owners?.find(
       (owner) => owner.username === formState.username
     )
 
@@ -45,7 +45,7 @@ const Login = ({ owners }) => {
             value={formState.password}
             placeholder="Password"
           />
-          <button type="submit">Submit</button>
+          <button type="submit">Log in</button>
         </form>
       </div>
     </div>
