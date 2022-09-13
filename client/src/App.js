@@ -23,7 +23,7 @@ const App = () => {
   const [services, setServices] = useState();
 
   const getAllBusinesses = async () => {
-    let res = await axios.get(`${BASE_URL}/business`);
+    let res = await axios.get(`${BASE_URL}/businesses`);
     // console.log(res);
     setBusinesses(res.data);
   };
@@ -33,7 +33,7 @@ const App = () => {
   }, []);
 
   const getAllOwners = async () => {
-    let res = await axios.get(`${BASE_URL}/owner`);
+    let res = await axios.get(`${BASE_URL}/owners`);
     // console.log(res);
     setOwners(res.data);
   };

@@ -12,7 +12,7 @@ const SignUp = () => {
     firstName: '',
     lastName: '',
     email: '',
-    userName: '',
+    username: '',
     password: '',
   }
 
@@ -24,7 +24,7 @@ const SignUp = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let res = await axios.post(`${BASE_URL}/owner/`, formState)
+    let res = await axios.post(`${BASE_URL}/owners/`, formState)
     setFormState(initialState)
     navigate(`owner/${res.data.id}`, { state: { owner: res.data } })
   }
@@ -61,7 +61,7 @@ const SignUp = () => {
             id="userName"
             type="text"
             onChange={handleChange}
-            value={formState.userName}
+            value={formState.username}
             placeholder="Username"
           />
           <input

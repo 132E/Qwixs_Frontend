@@ -9,7 +9,7 @@ const Owner = ({businesses}) => {
     let location = useLocation();
     let navigate = useNavigate();
 
-    let owner = location.state.owner; // this is the owner object that was passed in from the previous page
+    let owner = location.state.owner
     let ownerBusinesses = businesses?.filter((business) => business.owner === owner.id)
 
     const addBusiness = () => {
@@ -66,7 +66,7 @@ const Owner = ({businesses}) => {
                 ))}
             </div>
 
-        </div>
-    )
+            </div>
+        )
 };
 export default Owner;
