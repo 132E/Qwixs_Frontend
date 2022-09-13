@@ -28,11 +28,12 @@ const Owner = ({businesses}) => {
     }
 
 
+
     return(
         <div>
             <section className="hero-section">
                 <h1>Hello</h1>
-                <h2>{owner.name}</h2>
+                <h2>{owner.username}</h2>
                 <button onClick={addBusiness}>Add Business</button>
             </section>
             <div className="page-title">

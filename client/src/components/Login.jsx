@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom'
 const Login = ({ owners }) => {
   let navigate = useNavigate()
   const initialState = {
-    userName: '',
-    passwordDigest: ''
+    username: '',
+    password: ''
   }
   const [formState, setFormState] = useState(initialState)
 
@@ -15,7 +15,7 @@ const Login = ({ owners }) => {
 
   const handleSubmit = () => {
     const userData = owners.find(
-      (owner) => owner.userName === formState.userName
+      (owner) => owner.username === formState.username
     )
 
     if (userData) {
@@ -32,17 +32,17 @@ const Login = ({ owners }) => {
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           <input
-            id="userName"
+            id="username"
             type="text"
             onChange={handleChange}
-            value={formState.userName}
+            value={formState.username}
             placeholder="Username"
           />
           <input
-            id="passwordDigest"
+            id="password"
             type="text"
             onChange={handleChange}
-            value={formState.passwordDigest}
+            value={formState.password}
             placeholder="Password"
           />
           <button type="submit">Submit</button>
