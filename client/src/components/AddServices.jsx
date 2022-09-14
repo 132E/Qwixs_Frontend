@@ -4,7 +4,7 @@ import axios from 'axios';
 import { BASE_URL } from '../globals';
 
 
-const AddServices = ({getAllBusinesses}) => {
+const AddServices = ({getBusinessByPk}) => {
 
     let navigate = useNavigate();
     let location = useLocation();
@@ -20,7 +20,7 @@ const AddServices = ({getAllBusinesses}) => {
     const handleChangeService = (event) => {
         setServiceFormState({
             ...serviceFormState,
-            [event.target.name]: event.target.value
+            [event.target.id]: event.target.value
         })
     }
 
@@ -31,8 +31,8 @@ const AddServices = ({getAllBusinesses}) => {
             serviceFormState
         )
         setServiceFormState(initialStateService);
-        getAllBusinesses();
-        navigate(`/businesses/${businessId}`); // go back to business page
+        getBusinessByPk();
+        navigate(-2);
     }
 
 

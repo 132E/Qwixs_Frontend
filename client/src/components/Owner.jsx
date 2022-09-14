@@ -10,7 +10,7 @@ const Owner = ({businesses}) => {
     let navigate = useNavigate();
 
     let owner = location.state.owner
-    let ownerBusinesses = businesses?.filter((business) => business.owner === owner.id)
+    let ownerBusinesses = businesses?.filter((business) => business.ownerId === owner.id)
 
     const addBusiness = () => {
         navigate(`/owner/${owner.id}/addbusiness`, {state: {owner: owner}});
@@ -41,8 +41,10 @@ const Owner = ({businesses}) => {
             </div>
             <div className="businesses-container">
                 {ownerBusinesses?.map((business) =>(
-                    <div className="business-card">
-                        <h2>{business.name}</h2>
+                    <div>
+                        <h2>{businesses.name}</h2>
+                        <img src={businesses.coverImage} alt="business-coverImage" />
+                        <img src={businesses.aboutImage} alt="business-aboutImage" />
                         <h3>About {business.name}</h3>
                         <p>{business.about}</p>
                         <h3>Address</h3>
@@ -53,8 +55,12 @@ const Owner = ({businesses}) => {
                     <div className="services-container">
                         <h3>Services</h3>
                             <div className="services-flex">
-                                <p>{business.services?.name}</p>
-                                <p>{business.services?.description}</p>
+                                {business.services?.map((service) => (
+                                    <div className="service-card" key = {service.name}>
+                                        <h4>{service.name}</h4>
+                                        <p>{service.description}</p>
+                                    </div>
+                                ))}
                             </div>
                     </div>
 
