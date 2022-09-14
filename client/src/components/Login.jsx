@@ -26,6 +26,8 @@ const Login = ({ owners }) => {
   } 
 
   return (
+
+    <section className="bg">
     <div className="main-container">
       {/* <img src={CIcon} alt="c-logo-icon" className="c-icon" /> */}
       <h1>Login</h1>
@@ -49,6 +51,7 @@ const Login = ({ owners }) => {
         </form>
       </div>
     </div>
+    </section>
   )
 }
 

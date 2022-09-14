@@ -151,7 +151,7 @@ width: 150px;
   width: 350px;
   height: 300px;
   padding: 0px 50px;
-  background-color: #ccddfd;
+  background-color: #e6eeff;
   border-radius: 10px;
 }
 
@@ -189,8 +189,9 @@ width: 150px;
   padding: 45px;
   border-radius: 20px;
   box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
-  background: #c3d8ff;
+  background: rgba(195, 216, 255, 0.65);
 }
+
 
 .main-container h1 {
   font-size: 48px;
