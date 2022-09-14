@@ -47,15 +47,17 @@ const Owner = ({businesses}) => {
                         <img src={businesses.aboutImage} alt="business-aboutImage" />
                         <h3>About {business.name}</h3>
                         <p>{business.about}</p>
+                        <h3>{business.phone}</h3>
                         <h3>Address</h3>
                         <p>{business.address}</p>
-                        <p>{business.city}, {business.state}</p>
+                        <p>{business.city}</p>
+                        <p>{business.state}</p>
                         <p>{business.zip}</p>
 
                     <div className="services-container">
                         <h3>Services</h3>
                             <div className="services-flex">
-                                {business.services?.map((service) => (
+                                {business.Services?.map((service) => (
                                     <div className="service-card" key = {service.name}>
                                         <h4>{service.name}</h4>
                                         <p>{service.description}</p>
