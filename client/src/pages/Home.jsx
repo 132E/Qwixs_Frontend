@@ -18,10 +18,21 @@ const Home  = () => {
             <div className="page-title">
                 <h2>Grow your business with better representation</h2>
                 <p>We help bridge the gap between you and your target audience</p>
-                <div className="segmentation">
-
-                </div>
             </div>
+            <div className="steps-flex">
+                    <div className="step-container">
+                        <h3>Create Your Profile</h3>
+                        <p>Sign up for a free account and create your profile</p>
+                    </div>
+                    <div className="step-container">
+                        <h3>Add Your Business</h3>
+                        <p>Add your business to your profile and start building your online presence</p>
+                    </div>
+                    <div className="step-container">
+                        <h3>Add Some Services</h3>
+                        <p>Let your customers know what your business offers</p>
+                    </div>
+                    </div>
          </div>
     )
 };
